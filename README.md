@@ -88,3 +88,19 @@ The **CORRECT** way stands for Conformance, Ordering, Range, Reference, Existenc
   Your input may be about date/time. What happens to your system if the input was done by a person in a place 
   that does not have Daylight Saving Time? 
   Does the system work for someone in New York (GMT-5) as well as for someone in Amsterdam (GMT+1)?
+
+## Structural Testing and Code Coverage
+
+### Strategy Subsumption
+
+line/statement coverage - condition/branch coverage - Modified Decision Coverage/Decision Coverage - path coverage
+ 
+- If you achieve 100% decision coverage, you also achieved 100% line coverage.
+- If you achieve 100% path coverage, you also achieved 100% decision coverage.
+
+These relations are strategy subsumption. 
+
+More formally: Strategy X subsumes strategy Y if all elements that Y exercises are also exercised by X:
+
+![Coverage Strategy Subsumption](./docs/coverage-strategy-subsumption.png) 
+
