@@ -11,29 +11,42 @@ This repository is licensed under CC BY-NC-SA.
 
 # Course Content
 
-## Automated Software Testing
-- Introduction to JUnit
+## 0. Introduction
+
+### Readings
+
+- [Software Tester Career](http://istqbexamcertification.com/software-tester/)
+- [A pragmatic explanation on the difference between validation vs verification](https://www.easterbrook.ca/steve/2010/11/the-difference-between-verification-and-validation/)
+
+## 1. Automated Software Testing
+
+- Introduction to [JUnit 5](https://junit.org/junit5/docs/current/user-guide/)
+
 - `Defect` (aka `Bug`) vs. `Failure`: Defect **can** lead to a Failure 
 
-## Functional Testing
+## 2. Functional Testing
 
 ### Equivalence Partitioning (aka: Equivalence Classes) 
 
 **Samples:** 
 
 a) The [Leap Year Calculation](./src/main/java/tudelft/leapyear/LeapYear.java) has to respect 4 cases (==partitions):
+```
 - non leap year (%4!==0)
 - non leap centurial year (%100==0 AND %400!=0)
 - leap centurial year (%400==0)
 - leap year (%4==0 AND %100!=0)
+```
 
 It's called `equivalence` partitions, as for each partition you can use any input, which fulfills the partitions 
 condition, e.g. for 'non leap year' you can take year = 2001, year=2002, year = 2003, year = 2005...
 
 b) Christmas Discount on raw Amount
 
+```
 - category 1: Christmas | not Christmas
 - category 2: amount > 0 | amount == 0 | amount < 0 (exception!)  
+```
 
 Combinatorial:
 => 2x3 Cases = 6 Cases
@@ -89,7 +102,7 @@ The **CORRECT** way stands for Conformance, Ordering, Range, Reference, Existenc
   that does not have Daylight Saving Time? 
   Does the system work for someone in New York (GMT-5) as well as for someone in Amsterdam (GMT+1)?
 
-## Structural Testing and Code Coverage
+## 3. Structural Testing and Code Coverage
 
 ### Strategy Subsumption
 
@@ -104,3 +117,32 @@ More formally: Strategy X subsumes strategy Y if all elements that Y exercises a
 
 ![Coverage Strategy Subsumption](./docs/coverage-strategy-subsumption.png) 
 
+### Further Reading
+
+- [jacoco Coverage Tool Documentation](https://www.jacoco.org/jacoco/trunk/doc/index.html)
+- TODO [SR-Podcast about Jacoco](http://www.se-radio.net/2018/05/se-radio-episode-324-marc-hoffmann-on-code-test-coverage-analysis-and-tools/)
+
+- [Slides - Software Testing and Analysis: Process, Principles and Techniques, Wiley, 2007., Chapter 12](http://www.inf.ed.ac.uk/teaching/courses/st/2017-18/Ch12.pdf)
+
+## 4. Testability and Mock Objects
+
+
+# Glossary
+
+- Testability: **Controllability vs. Observability**
+    - **Controllability** is about how easy it is for us to provide **inputs and invoke the behaviour** that we want in 
+      the system under test. 
+    - **Observability** is about how easy it is for us to **observe the system under test** 
+      in order to verify whether the system behaved as expected.
+  
+- Testability: **Dependency Injection vs. Dependency Inversion Principle**
+    - Robert Martin defines the **Dependency Inversion Principle** as:
+               
+      >> High-level modules should not depend on low-level modules. Both should depend on abstractions.
+      >> Abstractions should not depend upon details. Details should depend upon abstractions.
+   
+       So, dependency inversion is about how classes are designed. The principle makes us think about what parts of our system are (should be) abstractions and what parts  contain low level details.
+   
+    - **Dependency injection**, 
+      on the other hand, is about how one object knows the dependencies of other objects, 
+      so that it can inject them, when needed. Dependency Injection is about how objects get their dependencies.
