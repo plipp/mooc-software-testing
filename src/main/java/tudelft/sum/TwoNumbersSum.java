@@ -1,14 +1,15 @@
 package tudelft.sum;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.List;
 
 // Source: https://leetcode.com/problems/add-two-numbers/description/
 class TwoNumbersSum {
 
-    public ArrayList<Integer> addTwoNumbers(ArrayList<Integer> first, ArrayList<Integer> second) {
-        Collections.reverse(first);
-        Collections.reverse(second);
+    @SuppressWarnings("WeakerAccess")
+    public List<Integer> addTwoNumbers(List<Integer> first, List<Integer> second) {
+// FIX       Collections.reverse(first);
+// FIX       Collections.reverse(second);
 
         int complement = 0;
         ArrayList<Integer> result = new ArrayList<>();
@@ -25,7 +26,11 @@ class TwoNumbersSum {
             result.add(i, total);
         }
 
-        Collections.reverse(result);
+        if (complement>0) {
+            result.add(complement);
+        }
+
+// FIX       Collections.reverse(result);
         return result;
     }
 }
