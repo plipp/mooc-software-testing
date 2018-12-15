@@ -126,6 +126,18 @@ More formally: Strategy X subsumes strategy Y if all elements that Y exercises a
 
 ## 4. Testability and Mock Objects
 
+### Further Reading
+
+
+# Readings
+
+### What to test
+- [Ham Vocke on the practical testing pyramid](https://martinfowler.com/articles/practical-test-pyramid.html)
+
+- [Martin Fowler's definition of integration testing](https://martinfowler.com/bliki/IntegrationTest.html)
+- [Eugen Kiss' blog post explaining why he prefers integration testing more than unit testing](https://blog.usejournal.com/lean-testing-or-why-unit-tests-are-worse-than-you-think-b6500139a009)
+
+... and please see single sections above
 
 # Glossary
 
