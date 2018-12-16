@@ -129,6 +129,23 @@ More formally: Strategy X subsumes strategy Y if all elements that Y exercises a
 ### Further Reading
 
 
+## 5. Test Code Smells
+
+### Test Data Builder
+
+Encapsulate Test Data Creation
+to avoid test code changes in many place in case of changes of the production code
+
+- [Test Data Builders: an alternative to the Object Mother pattern, by Nat Pryce](http://www.natpryce.com/articles/000714.html)
+- [Nat Pryce's Library for Building Test Data](https://github.com/npryce/make-it-easy) according to the builder pattern
+- Another Library for Building Test Data [Fixture Factory](https://github.com/six2six/fixture-factory)
+
+### Test Flakyness
+
+What to do in case of flaking Tests: see [Erratic Tests](http://xunitpatterns.com/Erratic%20Test.html)
+
+![Decision Tree](http://xunitpatterns.com/Erratic%20Test%20Trouble-Shooting.gif) 
+
 # Readings
 
 ### What to test
